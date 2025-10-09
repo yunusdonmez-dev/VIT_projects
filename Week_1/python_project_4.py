@@ -35,7 +35,7 @@ while count < total_item:
         total_price += amount*price
         count += 1
     else :
-        print("Please enter a valid product")
+        print("Please enter a valid product") # Mistype or product doesnt exist
         continue
 
 print(f"Total price would be {total_price} $. Do you want to pay cash or by card ? ")
