@@ -20,7 +20,7 @@ while count < total_item:
         # Get the product info after selection
         unit = products_2[basket]["unit"]
         price = products_2[basket]["price"]
-        while True:
+        while True: # Continue till we get a valid input
             amount = input(f"How many {unit} {basket} do you want to buy ? ") 
             try :    # Validate user input 
                 amount = int(amount)
