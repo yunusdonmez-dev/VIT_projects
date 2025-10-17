@@ -33,7 +33,7 @@ def dosya_yaz(veri):
 def kitaplari_listele():
     kitaplar = dosya_oku()
     if not kitaplar:
-        print("📂 Henüz kayıtlı kitap bulunmuyor.")
+        print(" Henüz kayıtlı kitap bulunmuyor.")
         return
     print(f"\n Toplam {len(kitaplar)} kitap listelendi:\n")
     for k in kitaplar:
@@ -128,3 +128,4 @@ def menu():
 # Programı çalıştır
 if __name__ == "__main__":
     menu()
+
