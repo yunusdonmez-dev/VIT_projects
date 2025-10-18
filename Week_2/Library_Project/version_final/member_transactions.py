@@ -242,7 +242,7 @@ def transaction_log(id, barcode):
 def lent_book():
 
     # Lent a boek
-    barcode = int(input("Enter the barcode of the book : "))
+    barcode = int(input("Kitabin barkodunu giriniz : "))
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     books_json_path = os.path.join(current_dir, 'kitap.json')
@@ -257,7 +257,7 @@ def lent_book():
             # selection = int(input("Select : "))
             lent_book() # Call the function but how to exit ???
     
-    user_id = int(input('Enter your user Id : '))
+    user_id = int(input('Kullanici id si: '))
 
     users_json_path = os.path.join(current_dir, 'members.json')
     with open(users_json_path, 'r',encoding='utf-8') as f:
@@ -275,7 +275,7 @@ def lent_book():
 
 def return_book():
 
-    barcode = int(input("Enter the barcode : "))
+    barcode = int(input("Kitap barkodunu giriniz : "))
 
     current_dir = os.path.dirname(os.path.abspath(__file__))
     books_json_path = os.path.join(current_dir, 'kitap.json')
@@ -285,16 +285,16 @@ def return_book():
 
         book = list(filter(lambda x:x['Barkod'] == barcode, books))[0]['Kitap_Adi']
 
-    id = int(input("Enter the user id : "))
+    id = int(input("Kullanici id sini giriniz : "))
 
     users_json_path = os.path.join(current_dir, 'members.json')
 
     with open(users_json_path, 'r', encoding='utf-8') as f:
         users = json.load(f)
 
-        user = list(filter(lambda x:x['id'] == id, users))[0]['User_name']    
+        user = list(filter(lambda x:x['id'] == id, users))[0]['uyeadi']    
 
-
+    print('Kitap basari ile teslim edilmistir')
 
    
     # Add the book again to the list
