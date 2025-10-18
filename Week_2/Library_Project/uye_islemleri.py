@@ -86,9 +86,8 @@ def uye_ara():
         else:
             print("Eslesen uye bulunamadi.")
         
-   
-        
-    
+
+
 #uye silme
 
 def uye_sil():
@@ -156,7 +155,7 @@ def kitap_iade():
             kitap["Durum"] = "Mevcut"
             kitap.pop("UyeID", None)
             kitap_bulundu = True
-            print(f"📚 {kitap['Kitap_Adi']} kitabı iade edildi.")
+            print(f"{kitap['Kitap_Adi']} kitabı iade edildi.")
             break
 
     if not kitap_bulundu:
