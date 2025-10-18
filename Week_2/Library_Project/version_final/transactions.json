@@ -1,0 +1,16 @@
+[
+    {
+        "Id": 1,
+        "User_name": "Yusuf",
+        "Tel": "06564654",
+        "Adres": "Yeni loven",
+        "barcode": 9786051856322,
+        "Language": "Türkçe",
+        "Price": 27.3,
+        "Book_name": "Hazan",
+        "publisher": "Everest Yayınları",
+        "Author": "Ayşe Kulin",
+        "Start_date": "2025-10-18",
+        "Due_date": "2025-11-07"
+    }
+]

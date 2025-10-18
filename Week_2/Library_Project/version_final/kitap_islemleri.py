@@ -41,6 +41,7 @@ def kitaplari_listele():
 
 #Kitap ekle
 def kitap_ekle(barkod, ad, yazar, fiyat, yayinevi, dil="Türkçe"):
+    
     kitaplar = dosya_oku()
     if any(str(k.get("Barkod")) == str(barkod) for k in kitaplar):
         print("Bu barkodla kayıtlı kitap zaten var!")

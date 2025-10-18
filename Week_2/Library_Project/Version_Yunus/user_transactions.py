@@ -3,7 +3,7 @@
 import os
 import json
 import datetime
-import time_module
+import Week_2.Library_Project.version_final.time_module as time_module
 
 def transaction_log(id, barcode):
     # This function hold the record of every transaction as log in json file.
