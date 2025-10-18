@@ -1,9 +1,8 @@
-
 import json
 import os
 
 #JSON dosyasının adı
-DOSYA_ADI = os.path.join(os.path.dirname(__file__), "books.json")
+DOSYA_ADI = os.path.join(os.path.dirname(__file__), "kitap.json")
 
 #JSON dosyasını oku
 def dosya_oku():
@@ -34,12 +33,12 @@ def dosya_yaz(veri):
 def kitaplari_listele():
     kitaplar = dosya_oku()
     if not kitaplar:
-        print(" Henüz kayıtlı kitap bulunmuyor.")
+        print("📂 Henüz kayıtlı kitap bulunmuyor.")
         return
     print(f"\n Toplam {len(kitaplar)} kitap listelendi:\n")
     for k in kitaplar:
         print(f"{k.get('Barkod')} | {k.get('Kitap_Adi')} | {k.get('Yazar')} | {k.get('Fiyat')}₺ | {k.get('Yayinevi')}")
-    input("Press enter to continue")
+
 #Kitap ekle
 def kitap_ekle(barkod, ad, yazar, fiyat, yayinevi, dil="Türkçe"):
     kitaplar = dosya_oku()
