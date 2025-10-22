@@ -15,8 +15,8 @@ while True:
     if selection == 0:
         break
     if selection == 1:
-        name : input('Enter username : ') # type: ignore
-        password : input('Enter password : ') # type: ignore
+        name = input('Enter username : ') 
+        password = input('Enter password : ') 
 
         library_1.login(name, password)
 
