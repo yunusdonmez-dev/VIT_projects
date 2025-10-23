@@ -117,7 +117,11 @@ class Library:
         current_dir = os.path.dirname(os.path.abspath(__file__)) # This finds current directory to be make it work on every system
         books_json = os.path.join(current_dir, 'books.json') # Add books.json to current path
         users_json = os.path.join(current_dir, 'users.json')
-        
+        with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
+            a={}
+            for u in self.users:
+                a=u.to_dict()
+                json.dump(a,f, indent=4, ensure_ascii=False)
         with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
             json.dump([], f)
             json.dump(self.books,f, indent=4, ensure_ascii=False)
@@ -134,6 +138,7 @@ library1 = Library('yunus')
 book1 = Book("1984", "berat", 2025)
 book2 = Book("2025", "berat", 2025)
 user1 = User("berat",12345)
+
 library1.add_book(book1)
 library1.add_book(book2)
 library1.add_user(user1)
