@@ -1,12 +1,12 @@
 import json
 import os
 class Book():
-    def __init__(self,title,author,publication_year,is_borrowed=False):
+    def __init__(self,title,author,publication_year,is_borrowed=False,borrowed_by=None):
         self.title = title
         self.author = author
         self.publication_year = publication_year
         self.is_borrowed = is_borrowed
-        self.borrowed_by = None
+        self.borrowed_by = borrowed_by
 
     def show_info(self):
         print(f"""
@@ -117,29 +117,30 @@ class Library:
         current_dir = os.path.dirname(os.path.abspath(__file__)) # This finds current directory to be make it work on every system
         books_json = os.path.join(current_dir, 'books.json') # Add books.json to current path
         users_json = os.path.join(current_dir, 'users.json')
-        with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
-            a={}
-            for u in self.users:
-                a=u.to_dict()
-                json.dump(a,f, indent=4, ensure_ascii=False)
-        with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
-            json.dump([], f)
-            json.dump(self.books,f, indent=4, ensure_ascii=False)
-
+        temp_users=[]
+        temp_books=[]
         with open(users_json, "w",encoding='utf-8') as f: # Save library users to json/database
-            json.dump([], f)
-            json.dump(self.users,f, indent=4, ensure_ascii=False)
+            for u in self.users:
+                temp_users.append(u.to_dict())
+            json.dump(temp_users,f, indent=4, ensure_ascii=False)   
+
+        with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
+            for b in self.books:
+                temp_books.append(b.to_dict())
+            json.dump(temp_books,f, indent=4, ensure_ascii=False) 
+        
 
     def exit(self):
         print('Thanks for using')
         Library.save(self)
     
 library1 = Library('yunus')
-book1 = Book("1984", "berat", 2025)
-book2 = Book("2025", "berat", 2025)
-user1 = User("berat",12345)
+user1 = User("user66",12345)
+book1 = Book("1984", "berat", 2025, True, user1)
+book2 = Book("2025", "berat2", 2024)
+
 
 library1.add_book(book1)
 library1.add_book(book2)
 library1.add_user(user1)
-library1.exit()
+library1.login("user66",12345)
