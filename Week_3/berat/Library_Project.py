@@ -17,7 +17,7 @@ Status: {"Borrowed" if self.is_borrowed else "Available"}
         
     def borrow(self,user):
         if self.is_borrowed:
-            print(f"'{self.title}' is already borrowed by '{self.borrowed_by.name}'.")
+            print(f"'{self.title}' is already borrowed by '{self.borrowed_by}'.")
         else:
             self.is_borrowed = True
             self.borrowed_by = user
