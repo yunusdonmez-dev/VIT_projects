@@ -1,4 +1,5 @@
-
+import json
+import os
 class Book():
     def __init__(self,title,author,publication_year,is_borrowed=False):
         self.title = title
@@ -112,3 +113,28 @@ class Library:
         print("Username or password didn't match.")
         return None
     
+    def save(self):
+        current_dir = os.path.dirname(os.path.abspath(__file__)) # This finds current directory to be make it work on every system
+        books_json = os.path.join(current_dir, 'books.json') # Add books.json to current path
+        users_json = os.path.join(current_dir, 'users.json')
+        
+        with open(books_json, "w",encoding='utf-8') as f: # Save library books to json/database
+            json.dump([], f)
+            json.dump(self.books,f, indent=4, ensure_ascii=False)
+
+        with open(users_json, "w",encoding='utf-8') as f: # Save library users to json/database
+            json.dump([], f)
+            json.dump(self.users,f, indent=4, ensure_ascii=False)
+
+    def exit(self):
+        print('Thanks for using')
+        Library.save(self)
+    
+library1 = Library('yunus')
+book1 = Book("1984", "berat", 2025)
+book2 = Book("2025", "berat", 2025)
+user1 = User("berat",12345)
+library1.add_book(book1)
+library1.add_book(book2)
+library1.add_user(user1)
+library1.exit()
