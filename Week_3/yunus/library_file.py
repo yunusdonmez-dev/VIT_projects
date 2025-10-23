@@ -10,15 +10,21 @@ class Library():
         self.users= []
         self.books= []
     
-    def add_book(self, book : dict): # -- > print informatie
+    def add_book(self, book : dict): # -- > 
         ''''
-        This functian takes a book in dictionary format and add this books.json file
+        This functian takes a book in dictionary format and add this to books.json file
         '''
-        current_dir = os.path.dirname(os.path.abspath(__file__))
-        books_json = os.path.join(current_dir, 'books.json')
-        with open(books_json, 'r+', encoding='utf-8') as file:
+        current_dir = os.path.dirname(os.path.abspath(__file__)) # This finds current directory to be make it work on every system
+        books_json = os.path.join(current_dir, 'books.json') # Add books.json to current path
+        
+        if os.path.exists(books_json) == False:
+            with open(books_json, 'w',encoding='utf-8') as f: 
+                json.dump([], f)
+
+        with open(books_json, 'r', encoding='utf-8') as file:
             books = json.load(file)
             books.append(book)
+        with open(books_json, 'w', encoding='utf-8') as file:
             json.dump(books, file, ensure_ascii=False ,indent=4)
         print('Book is added')
 
@@ -32,9 +38,10 @@ class Library():
             with open(users_json, 'w',encoding='utf-8') as f: 
                 json.dump([], f)
 
-        with open(users_json, 'r+', encoding='utf-8') as file:
+        with open(users_json, 'r', encoding='utf-8') as file:
             users = json.load(file)
             users.append(user)
+        with open(users_json, 'w', encoding='utf-8') as file:
             json.dump(users, file, ensure_ascii=False ,indent=4)
         print('User is added')
 
