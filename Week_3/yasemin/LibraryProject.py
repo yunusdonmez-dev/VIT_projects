@@ -214,13 +214,37 @@ def main():
             library.add_user(new_user)
             user = new_user
         elif choice == "3":                         #yeni hesap olusturma
-            title = input("Title: ")
-            author = input("Author: ")
-            publication_year = int(input("Publication_year: "))
-            book = Book(title, author, publication_year)
-            library.add_book(book)
-            print("Book is added.")
-            library.save()
+            print("1 -Standart")
+            print("2 -Novel")
+            print("3 -Magazine")
+            genre = int(input("Choose the genre of the book: "))
+            if genre == 1:
+                title = input("Title: ")
+                author = input("Author: ")
+                publication_year = int(input("Publication_year: "))
+
+                book = Book(title, author, publication_year)
+                library.add_book(book)
+                print("Book is added.")
+                library.save()
+            elif genre == 2:
+                title = input("Title: ")
+                author = input("Author: ")
+                publication_year = int(input("Publication_year: "))
+                book_genre = 'Novel'
+                book = Novel(title, author, publication_year, book_genre)
+                library.add_book(book)
+                print("Book is added.")
+                library.save()
+            elif genre == 3: 
+                title = input("Title: ")
+                author = input("Author: ")
+                publication_year = int(input("Publication_year: "))
+                book_genre = 'Magazine'
+                book = Magazine(title, author, publication_year, book_genre)
+                library.add_book(book)
+                print("Book is added.")
+                library.save()
         else:
             print("Invalid choice. Try again.")
 
