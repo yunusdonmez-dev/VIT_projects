@@ -1,0 +1,33 @@
+{
+    "name": "My Library",
+    "books": [
+        {
+            "title": "Sefiller",
+            "author": "Viktor guho",
+            "publication_year": 1889,
+            "is_borrowed": true,
+            "borrowed_by": "yunus-2"
+        },
+        {
+            "title": "Suc ve ceza",
+            "author": "Dosteyevski",
+            "publication_year": 1992,
+            "is_borrowed": false,
+            "borrowed_by": null
+        }
+    ],
+    "users": [
+        {
+            "name": "yunus",
+            "password": "123",
+            "borrowed_books": []
+        },
+        {
+            "name": "yunus-2",
+            "password": "1234a",
+            "borrowed_books": [
+                "Sefiller"
+            ]
+        }
+    ]
+}

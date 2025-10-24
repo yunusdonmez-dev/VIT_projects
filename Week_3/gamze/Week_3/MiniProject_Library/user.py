@@ -1,10 +1,10 @@
 #User.py 
 
 class User: 
-    def _init_(self, name, password):
+    def __init__(self, name, password):
         self.name = name
         self.password = password
-        self.borrowed_booka = []
+        self.borrowed_books = []
 
     def borrow_book(self, book):
         book.borrow(self)

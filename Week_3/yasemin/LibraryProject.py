@@ -200,6 +200,7 @@ def main():
     while not user:                          #kullanıcı başarılı şekilde giriş yapana kadar döngü devam eder.
         print("1 - Log in")
         print("2 - Create new account")
+        print("3 - Add book")
         choice = input("Choose an option: ")
 
         if choice == "1":
@@ -212,6 +213,14 @@ def main():
             new_user = User(name, password)
             library.add_user(new_user)
             user = new_user
+        elif choice == "3":                         #yeni hesap olusturma
+            title = input("Title: ")
+            author = input("Author: ")
+            publication_year = int(input("Publication_year: "))
+            book = Book(title, author, publication_year)
+            library.add_book(book)
+            print("Book is added.")
+            library.save()
         else:
             print("Invalid choice. Try again.")
 
@@ -259,4 +268,5 @@ def main():
 
 
 if __name__ == "__main__":
+    
     main()
