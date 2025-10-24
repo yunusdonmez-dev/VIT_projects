@@ -15,7 +15,7 @@ Publication Year: {self.publication_year}
 Status: {"Borrowed" if self.is_borrowed else "Available"}  
               """)
         
-    def borrow(self,user):
+    def borrow(self,user): # Odunc verme
         if self.is_borrowed:
             print(f"'{self.title}' is already borrowed by '{self.borrowed_by}'.")
         else:
