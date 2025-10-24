@@ -21,17 +21,17 @@ class Book():
 
     def borrow(self, user):
         if not self.is_borrowed:                               #kitap kimse tarafindan alinmamissa, musaitse
-            self.is_borrowed = True
-            self.borrowed_by = user.name
+            self.is_borrowed = True                            
+            self.borrowed_by = user.name                       
             user.borrowed_books.append(self.title)             #basligi ekliyor
             print(f"{user.name} borrowed '{self.title}'.")
         else:                                                  #musait degilse kimin aldigini soyler   
             print(f"'{self.title}' is already borrowed by {self.borrowed_by}.")
 
     def return_book(self,user):
-        if self.is_borrowed and self.borrowed_by == user.name:
-            self.is_borrowed = False
-            self.borrowed_by = None
+        if self.is_borrowed and self.borrowed_by == user.name:          #kitap biri tarafinda alinmissa
+            self.is_borrowed = False                                    #kitap kutuphaneye geri dondu
+            self.borrowed_by = None                                     #artik bir kullanicida degil
             user.borrowed_books.remove(self.title)
             print(f"'{user.name}' has successfully returned '{self.title}'.")
         
@@ -56,11 +56,11 @@ class Book():
 
 class Novel(Book):
     def __init__(self, title, author, publication_year, genre):
-        super().__init__(title, author, publication_year)
-        self.genre = genre 
+        super().__init__(title, author, publication_year)           #book sinifinin __init__ methodunu cagirir
+        self.genre = genre                  #genre= tur demek
         
     def to_dict(self):
-        data = super().to_dict()
+        data = super().to_dict()            #book daki to_dict cagirilir
         data["genre"] = self.genre 
         return data
     
@@ -145,8 +145,8 @@ class Library():
 
         def save(self, filename="library_data.json"):
             data = {
-                "name": self.name,
-                "books": [book.to_dict() for book in self.books],
+                "name": self.name,                                          #kutuphanenin adi
+                "books": [book.to_dict() for book in self.books],           #self.books içindeki her book nesnesi için book.to_dict() çağrılır.
                 "users": [user.to_dict() for user in self.users]
             }
             with open(filename, "w", encoding="utf-8") as f:
@@ -155,25 +155,27 @@ class Library():
 
 
 
-        def load(self, filename="library_data.json"):
+        def load(self, filename="library_data.json"):           #kaydedilmis veriyi geri yukler (self nesnesine) yeniden kullanima sokar
             if not os.path.exists(filename):
                 print("No saved data found.")
                 return
             with open(filename, "r", encoding="utf-8") as f:
-             data = json.load(f)
+             data = json.load(f)                                #json.load(f) ile JSON formatındaki veri Python sözlüğüne (dict) çevrilir.
 
-            self.name = data["name"]
-            self.books = []
-            for b in data["books"]:
+            self.name = data["name"]                            #kutuphanenin adi self.name olarak ayarlanir
+            
+            #Kitapları (books) Yeniden Oluşturma
+            self.books = []                                     
+            for b in data["books"]:                             
                 if "genre" in b:
                     book = Novel(b["title"], b["author"], b["publication_year"], b["genre"])
                 elif "issue" in b:
                     book = Magazine(b["title"], b["author"], b["publication_year"], b["issue"])
                 else:
                     book = Book(b["title"], b["author"], b["publication_year"])
-            book.is_borrowed = b["is_borrowed"]
-            book.borrowed_by = b["borrowed_by"]
-            self.books.append(book)
+                book.is_borrowed = b["is_borrowed"]             #kitap oduncte mi
+                book.borrowed_by = b["borrowed_by"]             #kim odunc aldi
+                self.books.append(book)
 
             self.users = []
             for u in data["users"]:
@@ -183,5 +185,78 @@ class Library():
 
         def exit(self):
             print('Thanks for using')
-            self.save(self)
-           
+            self.save()
+
+
+#ana menu  
+def main():
+    library = Library("My Library")
+    library.load()               # JSON varsa eski verileri yükle
+
+    print("---Welcome to the Library System---")
+
+    # Login veya yeni hesap oluşturma
+    user = None                              #henuz giris yapmis bir kullanici yok
+    while not user:                          #kullanıcı başarılı şekilde giriş yapana kadar döngü devam eder.
+        print("1 - Log in")
+        print("2 - Create new account")
+        choice = input("Choose an option: ")
+
+        if choice == "1":
+            name = input("Username: ")
+            password = input("Password: ")
+            user = library.login(name, password)
+        elif choice == "2":                         #yeni hesap olusturma
+            name = input("Choose a username: ")
+            password = input("Choose a password: ")
+            new_user = User(name, password)
+            library.add_user(new_user)
+            user = new_user
+        else:
+            print("Invalid choice. Try again.")
+
+
+    while True:
+        print(f"=== Library Menu ({user.name}) ===")
+        print("1 - List all books")
+        print("2 - Borrow a book")
+        print("3 - Return a book")
+        print("4 - Show my borrowed books")
+        print("5 - Save and exit")
+
+        choice = input("Select an option: ")
+
+        if choice == "1":
+            library.show_all_books()
+
+        elif choice == "2":
+            title = input("Enter the title of the book to borrow: ")
+            for book in library.books:
+                if book.title.lower() == title.lower():
+                    user.borrow_book(book)              #kitap kutuphanede bulursa kullaniciya eklenir
+                    break
+            else:
+                print("Book not found.")
+
+        elif choice == "3":
+            title = input("Enter the title of the book to return: ")
+            for book in library.books:
+                if book.title.lower() == title.lower():
+                    user.return_book(book)                  #kitap kullanici listesinden silinir
+                    break
+            else:
+                print("Book not found.")
+
+        elif choice == "4":
+            user.list_borrowed_books()
+
+        elif choice == "5":
+            library.exit()
+            break
+
+        else:
+            print("Invalid option. Try again.")
+
+
+if __name__ == "__main__":
+    main()
