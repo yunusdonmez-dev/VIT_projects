@@ -13,7 +13,7 @@ class My_App(QMainWindow):  # New class is made that inherit from QWidget
 
     def menu_page(self):
         from menu import MainWindow
-        self.main = MainWindow()
+        self.main = MainWindow() 
         self.main.show()
         self.close()
         

@@ -14,8 +14,8 @@ class MainWindow(QMainWindow):
         self.app_button.clicked.connect(self.application_page)  # type: ignore
         
     def login_page(self):
-        from login import My_App
-        self.main = My_App()
+        from login import LoginPage
+        self.main = LoginPage()
         self.main.show()
         self.close()
 
