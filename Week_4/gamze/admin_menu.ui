@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="contentsMargins">
+    <left>10</left>
+    <top>10</top>
+    <right>10</right>
+    <bottom>10</bottom>
+   </property>
+   <item>
+    <widget class="QFrame" name="frame_header">
+     <property name="font">
+      <font>
+       <family>Academy Engraved LET</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Shape::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Shadow::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label_logo">
+        <property name="pixmap">
+         <pixmap>/Users/pinhanderler/Downloads/logo.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>150</width>
+          <height>80</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_title">
+        <property name="font">
+         <font>
+          <family>Arial Black</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>ADMIN MENU</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer" orientation="Qt::Horizontal"/>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_content">
+        <property name="maximumSize">
+         <size>
+          <width>320</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="spacing">
+          <number>12</number>
+         </property>
+         <property name="contentsMargins">
+          <left>5</left>
+          <top>10</top>
+          <right>5</right>
+          <bottom>10</bottom>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_settings">
+           <property name="text">
+            <string>PREFERENCES - ADMIN</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+font-size: 14px;
+font-weight: bold;
+min-height: 40px;
+}
+QPushButton:hover {
+    background-color: rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+    color: rgb(255, 255, 255);
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_exit">
+           <property name="text">
+            <string>EXIT</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+font-size: 14px;
+font-weight: bold;
+min-height: 40px;
+}
+QPushButton:hover {
+    background-color: rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+    color: rgb(255, 255, 255);
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_event">
+           <property name="text">
+            <string>EVENT CONTROL</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+font-size: 14px;
+font-weight: bold;
+min-height: 40px;
+}
+QPushButton:hover {
+    background-color: rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+    color: rgb(255, 255, 255);
+}</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButton_mail">
+           <property name="text">
+            <string>SEND MAIL</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+font-size: 14px;
+font-weight: bold;
+min-height: 40px;
+}
+QPushButton:hover {
+    background-color: rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+    color: rgb(255, 255, 255);
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacerHeader" orientation="Qt::Vertical">
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="table_events">
+     <property name="styleSheet">
+      <string notr="true">QTableWidget {
+    background-color: #2a2d33;
+    color: white;
+    gridline-color: #444;
+    selection-background-color: #50555e;
+}
+QHeaderView::section {
+    background-color: #3c414a;
+    color: white;
+    padding: 4px;
+    border: 1px solid #444;
+}</string>
+     </property>
+     <column>
+      <property name="text">
+       <string>EVENT NAME</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>START TIME</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>PARTICIPANT E-MAIL</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>ORGANIZER E-MAIL</string>
+      </property>
+     </column>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
