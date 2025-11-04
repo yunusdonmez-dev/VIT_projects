@@ -7,9 +7,9 @@ import sys
 class MainWindow(QMainWindow):
     def __init__(self) -> None:
         super().__init__()
-        uic.loadUi('yunus/menu.ui', self)  # type: ignore
+        uic.loadUi('Week_4/yunus/menu.ui', self)  # type: ignore
         self.setWindowTitle('Menu Page')  # These are methode of QWidget class
-        self.setWindowIcon(QIcon('yunus/check_icon.png'))
+        self.setWindowIcon(QIcon('Week_4/yunus/check_icon.png'))
         self.log_out_button.clicked.connect(self.login_page)  # type: ignore
         self.app_button.clicked.connect(self.application_page)  # type: ignore
         

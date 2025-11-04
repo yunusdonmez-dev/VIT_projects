@@ -6,9 +6,9 @@ import sys
 class My_App(QMainWindow):  # New class is made that inherit from QWidget
     def __init__(self) -> None:
         super().__init__()
-        uic.loadUi('yunus/applications.ui', self)  # type: ignore
+        uic.loadUi('Week_4/yunus/applications.ui', self)  # type: ignore
         self.setWindowTitle('Application Page')  # These are methode of QWidget class
-        self.setWindowIcon(QIcon('yunus/check_icon.png'))
+        self.setWindowIcon(QIcon('Week_4/yunus/check_icon.png'))
         self.back_button.clicked.connect(self.menu_page) # type: ignore
 
     def menu_page(self):
