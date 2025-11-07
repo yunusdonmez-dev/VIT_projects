@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+}
+QPushButton:hover {
+    background-color:rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+	color: rgb(255, 255, 255)
+}</string>
+  </property>
+  <widget class="QLabel" name="label_title">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>90</y>
+     <width>191</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>25</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>APPLICATIONS</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget_applications">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>200</y>
+     <width>511</width>
+     <height>371</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <column>
+    <property name="text">
+     <string>Zaman damgası</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Adınız Soyadınız</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Mail adresiniz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Telefon Numaranız</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Posta Kodunuz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Yaşadığınız Eyalet</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Şu anki durumunuz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Yakın zamanda başlayacak ITPH Cybersecurity veya Powerplatform Eğitimlerine Katılmak istemisiniz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Ekonomik Durumunuz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Şu anda bir dil kursuna devam ediyor musunuz?</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Yabancı dil Seviyeniz [İngilizce]</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Yabancı dil Seviyeniz [Hollandaca]</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Belediyenizden çalışma ile ilgili baskı görüyor musunuz?</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Başka bir IT kursu (Bootcamp) bitirdiniz mi?</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>İnternetten herhangi bir IT kursu takip ettiniz mi (Coursera, Udemy gibi)</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Daha önce herhangi bir IT iş tecrübeniz var mı?</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Şu anda herhangi bir projeye dahil misiniz? (Öğretmenlik projesi veya Leerwerktraject v.s)</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>IT sektöründe hangi bölüm veya bölümlerde çalışmak istiyorsunuz ,bir den fazla seçenek seçebilirsiniz</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Aşağıya bu projeye katılmak veya IT sektöründe kariyer yapmak için sizi harekete geçiren motivasyondan bahseder misiniz?</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Mentor gorusmesi</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Yesil Tık Olan</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>10</y>
+     <width>231</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>logo.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>-2</x>
+     <y>-1</y>
+     <width>821</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>15</pointsize>
+    </font>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label_background">
+    <property name="geometry">
+     <rect>
+      <x>-20</x>
+      <y>-11</y>
+      <width>841</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>WhiteGrey.png</pixmap>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_search">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>150</y>
+      <width>131</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Search</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit_search">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>150</y>
+      <width>281</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Enter your search term:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_return">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>490</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Return to Preferences Screen</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_exit">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>530</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_check">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>320</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Prev VIT Check</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_filtered">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>450</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Filtered Applications</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_all_app">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>200</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>All Applications</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_assigned">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>240</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Assigned Mentor Interviews</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_unassigned">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>280</y>
+      <width>221</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QMainWindow {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
+                                      stop:0 #caf0f8, stop:1 #90e0ef);
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Unassigned Mentor Interviews</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_dublicate">
+    <property name="geometry">
+     <rect>
+      <x>32</x>
+      <y>360</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Dublicate Application</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_different">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>400</y>
+      <width>221</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Different Registration</string>
+    </property>
+   </widget>
+  </widget>
+  <zorder>frame</zorder>
+  <zorder>label_title</zorder>
+  <zorder>tableWidget_applications</zorder>
+  <zorder>label</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

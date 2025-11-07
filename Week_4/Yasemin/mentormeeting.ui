@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-30</y>
+      <width>800</width>
+      <height>621</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_logo">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>30</y>
+       <width>291</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>logo.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_title">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>130</y>
+       <width>251</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>26</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>MENTOR MEETING</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_search">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>Name or Surname:</string>
+     </property>
+     <property name="placeholderText">
+      <string>Search...</string>
+     </property>
+     <property name="clearButtonEnabled">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_search">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>280</y>
+       <width>221</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+}
+QPushButton:hover {
+    background-color:rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+	color: rgb(255, 255, 255)
+}</string>
+     </property>
+     <property name="text">
+      <string>Search</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_all">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>370</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+}
+QPushButton:hover {
+    background-color:rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+	color: rgb(255, 255, 255)
+}</string>
+     </property>
+     <property name="text">
+      <string>All Conversations</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboBox_tabs">
+     <property name="geometry">
+      <rect>
+       <x>360</x>
+       <y>190</y>
+       <width>411</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>13</pointsize>
+      </font>
+     </property>
+     <item>
+      <property name="text">
+       <string>VIT Projesinin Tamamina Katilmasi Uygun Olur</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>VIT Projesi ilk IT Egitimi Al... a Yönlendirilmesi Uygun Olur</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>VIT Projesi Ingilizce Egitim...a Yönlendirilmesi Uygun Olur</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>VIT Projesi Kapsaminda Dir...õnlendirilmesi Uygun Olur.</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Direkt Bireysel Koçluk ile ise Vönlendirilmesi Uygun Olur</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Bir Sonraki VIT Projesine Katilmasi Daha Uygun Olur</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Baska Bir Sektöre Vönlendirilmeli</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Diger</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QTableWidget" name="tableWidget_mentor">
+     <property name="geometry">
+      <rect>
+       <x>260</x>
+       <y>240</y>
+       <width>531</width>
+       <height>331</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+      </font>
+     </property>
+     <property name="sortingEnabled">
+      <bool>false</bool>
+     </property>
+     <column>
+      <property name="text">
+       <string>Gorusma tarihi</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mentinin adi soyadi</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Mentorün adı-soyadı</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Katılımcı IT sektörü hakkında bilgi sahibi mi?</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>VIT projesinin tamamına katılması uygun olur</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Katılımcı hakkında ne düşünüyorsunuz</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Katilimcinin yogunluk durumu</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Katilimci hakkinda yorumlar</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QPushButton" name="pushButton_return">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>430</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+}
+QPushButton:hover {
+    background-color:rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+	color: rgb(255, 255, 255)
+}</string>
+     </property>
+     <property name="text">
+      <string>Return to Preference Screen</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_background">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>15</y>
+       <width>801</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>WhiteGrey.png</pixmap>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_exit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>221</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Arial</family>
+       <pointsize>15</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+background-color: rgb(255, 255, 255);
+border-radius: 10px;
+border: 2px solid rgb(171, 171, 171);
+}
+QPushButton:hover {
+    background-color:rgb(255, 226, 229);
+}
+QPushButton:pressed {
+    background-color: rgb(218, 30, 60);
+	color: rgb(255, 255, 255)
+}</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <zorder>label_background</zorder>
+    <zorder>label_logo</zorder>
+    <zorder>label_title</zorder>
+    <zorder>lineEdit_search</zorder>
+    <zorder>pushButton_search</zorder>
+    <zorder>pushButton_all</zorder>
+    <zorder>comboBox_tabs</zorder>
+    <zorder>tableWidget_mentor</zorder>
+    <zorder>pushButton_return</zorder>
+    <zorder>pushButton_exit</zorder>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
